@@ -1,0 +1,150 @@
+{
+  "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "ngx-pdfkit-app",
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "ngx-pdfkit-app": {
+      "projectType": "application",
+      "root": "apps/ngx-pdfkit-app",
+      "sourceRoot": "apps/ngx-pdfkit-app/src",
+      "prefix": "ngx-pdfkit",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ngx-pdfkit-app",
+            "index": "apps/ngx-pdfkit-app/src/index.html",
+            "main": "apps/ngx-pdfkit-app/src/main.ts",
+            "polyfills": "apps/ngx-pdfkit-app/src/polyfills.ts",
+            "tsConfig": "apps/ngx-pdfkit-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/ngx-pdfkit-app/src/favicon.ico",
+              "apps/ngx-pdfkit-app/src/assets"
+            ],
+            "styles": ["apps/ngx-pdfkit-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ngx-pdfkit-app/src/environments/environment.ts",
+                  "with": "apps/ngx-pdfkit-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-pdfkit-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-pdfkit-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-pdfkit-app:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/ngx-pdfkit-app/src/**/*.ts",
+              "apps/ngx-pdfkit-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/ngx-pdfkit-app"],
+          "options": {
+            "jestConfig": "apps/ngx-pdfkit-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ngx-pdfkit-app-e2e": {
+      "root": "apps/ngx-pdfkit-app-e2e",
+      "sourceRoot": "apps/ngx-pdfkit-app-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ngx-pdfkit-app-e2e/cypress.json",
+            "tsConfig": "apps/ngx-pdfkit-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ngx-pdfkit-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-pdfkit-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/ngx-pdfkit-app-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
