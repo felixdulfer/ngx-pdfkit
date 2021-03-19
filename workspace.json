@@ -51,7 +51,9 @@
               "apps/ngx-pdfkit-app/src/favicon.ico",
               "apps/ngx-pdfkit-app/src/assets"
             ],
-            "styles": ["apps/ngx-pdfkit-app/src/styles.scss"],
+            "styles": [
+              "apps/ngx-pdfkit-app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -112,7 +114,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/ngx-pdfkit-app"],
+          "outputs": [
+            "coverage/apps/ngx-pdfkit-app"
+          ],
           "options": {
             "jestConfig": "apps/ngx-pdfkit-app/jest.config.js",
             "passWithNoTests": true
@@ -141,7 +145,48 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/ngx-pdfkit-app-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/ngx-pdfkit-app-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-pdfkit": {
+      "projectType": "library",
+      "root": "libs/ngx/pdfkit",
+      "sourceRoot": "libs/ngx/pdfkit/src",
+      "prefix": "ngx-pdfkit",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/ngx/pdfkit/tsconfig.lib.json",
+            "project": "libs/ngx/pdfkit/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ngx/pdfkit/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ngx/pdfkit/src/**/*.ts",
+              "libs/ngx/pdfkit/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/ngx/pdfkit"
+          ],
+          "options": {
+            "jestConfig": "libs/ngx/pdfkit/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
