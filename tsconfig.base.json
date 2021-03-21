@@ -18,5 +18,8 @@
       "ngx-pdfkit": ["libs/ngx/pdfkit/src/index.ts"]
     }
   },
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  },
   "exclude": ["node_modules", "tmp"]
 }
