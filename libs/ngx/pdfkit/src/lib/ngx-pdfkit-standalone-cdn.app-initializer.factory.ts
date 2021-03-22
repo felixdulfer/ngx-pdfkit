@@ -13,17 +13,12 @@ export const scriptsToLoad: ScriptsToLoad = [
     src:
       'https://github.com/foliojs/pdfkit/releases/download/v0.11.0/pdfkit.standalone.js',
   },
-  {
-    src:
-      'https://github.com/devongovett/blob-stream/releases/download/v0.1.3/blob-stream.js',
-  },
 ];
 
 export const ngxPdfKitStandaloneCdnAppInitializerFactory = (
   render2Factory: RendererFactory2,
   injector: Injector
 ): (() => Promise<void>) => {
-  console.log(`ngxPdfKitStandaloneCdnAppInitializerFactory`);
   const doc = injector.get(DOCUMENT);
   const renderer2 = render2Factory.createRenderer(null, null);
   const promises = scriptsToLoad.map(

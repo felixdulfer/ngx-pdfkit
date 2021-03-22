@@ -14,8 +14,6 @@ export class NgxPdfkitModule {
   static forRoot(
     options?: NgxPdfKitConfigurationForRootOptions
   ): ModuleWithProviders<NgxPdfkitModule> {
-    console.log(`forRoot()`);
-
     const config: NgxPdfKitConfigurationForRootOptions = {
       loadFromCdn: true,
       ...options,
@@ -34,7 +32,6 @@ export class NgxPdfkitModule {
   }
 
   static forChild(): ModuleWithProviders<NgxPdfkitModule> {
-    console.log(`forChild()`);
     const providers: ModuleWithProviders<NgxPdfkitModule>['providers'] = [];
     providers.push(pdfDocumentServiceFactoryProvider);
     return {

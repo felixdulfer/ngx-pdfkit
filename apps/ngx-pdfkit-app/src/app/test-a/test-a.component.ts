@@ -7,11 +7,10 @@ import { PdfDocumentService } from 'ngx-pdfkit';
   styleUrls: ['./test-a.component.scss'],
 })
 export class TestAComponent implements OnInit {
-  constructor(pdfService: PdfDocumentService) {
+  constructor(private readonly pdfService: PdfDocumentService) {
     console.log(pdfService);
   }
   ngOnInit(): void {
-    const PDFDocument = window['PDFDocument'];
-    console.log(PDFDocument);
+    console.log(this.pdfService.doc);
   }
 }

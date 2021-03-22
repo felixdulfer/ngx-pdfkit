@@ -1,12 +1,11 @@
-// eslint-disable-next-line @typescript-eslint/triple-slash-reference
-///<reference types="pdfkit" />
-
 import { Injectable } from '@angular/core';
+import * as PDFKit from 'pdfkit';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PdfDocumentService {
-  PDFDocument: PDFKit.PDFDocument = window['PDFDocument'];
-  doc = new this.PDFDocument();
+  #PDFDocument = window['PDFDocument'];
+
+  doc: PDFKit.PDFDocument = new this.#PDFDocument();
 }

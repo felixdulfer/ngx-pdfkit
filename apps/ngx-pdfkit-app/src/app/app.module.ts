@@ -12,7 +12,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    NgxPdfkitModule.forRoot(),
+    NgxPdfkitModule.forRoot({
+      loadFromCdn: true,
+    }),
   ],
   bootstrap: [AppComponent],
 })
