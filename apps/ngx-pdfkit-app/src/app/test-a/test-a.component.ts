@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PdfDocumentService } from 'ngx-pdfkit';
+import { PdfDocumentService } from '@felixdulfer/ngx-pdfkit';
 
 @Component({
   selector: 'ngx-pdfkit-test-a',

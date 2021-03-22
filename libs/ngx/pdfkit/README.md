@@ -14,7 +14,7 @@ npm install ngx-pdfkit pdfkit
 In your `app.module.ts`, import `NgxPdfkitModule.forRoot()`
 
 ```ts
-import { NgxPdfkitModule } from 'ngx-pdfkit';
+import { NgxPdfkitModule } from '@felixdulfer/ngx-pdfkit';
 
 @NgModule({
   imports: [
@@ -29,7 +29,7 @@ export class AppModule {}
 Make sure to include `NgxPdfkitModule.forChild()` in your application modules.
 
 ```ts
-import { NgxPdfkitModule } from 'ngx-pdfkit';
+import { NgxPdfkitModule } from '@felixdulfer/ngx-pdfkit';
 
 @NgModule({
   imports: [NgxPdfkitModule.forChild()],

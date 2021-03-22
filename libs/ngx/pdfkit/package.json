@@ -1,6 +1,6 @@
 {
-  "name": "ngx-pdfkit",
-  "version": "0.3.2",
+  "name": "@felixdulfer/ngx-pdfkit",
+  "version": "0.3.3",
   "homepage": "https://github.com/felixdulfer/ngx-pdfkit",
   "bugs": {
     "url": "https://github.com/felixdulfer/ngx-pdfkit/issues"
