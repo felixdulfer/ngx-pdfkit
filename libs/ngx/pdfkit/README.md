@@ -8,7 +8,7 @@ Please note that this is not production ready. Continue at your own risk :).
 ## Usage
 
 ```console
-npm install @felixdulfer/ngx-pdfkit pdfkit
+npm install @felixdulfer/ngx-pdfkit
 ```
 
 In your `app.module.ts`, import `NgxPdfkitModule.forRoot()`
