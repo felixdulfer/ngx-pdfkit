@@ -73,3 +73,4 @@ done.
 - [ ] Write some tests.
 - [ ] Add option to load standalone pdfkit from assets.
 - [ ] Add option to load standalone pdfkit during build.
+- [ ] Implement ci/cd using either Gitlab CI/CD or Github actions.
